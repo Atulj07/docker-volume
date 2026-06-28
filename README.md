@@ -145,8 +145,9 @@ Parts 1 and 2 used a **named volume** (`mongodata`), which Docker creates and ma
 17. The reverse is also true: any file the container writes into `/data` appears in `C:\mongodb` on the host. This live, two-way sync is what makes bind mounts useful for things like serving static files or live-editing code from the host while a container runs — unlike a named volume, where the data only lives inside Docker's managed storage and isn't directly browsable on the host filesystem.
 
      ### Screenshot
-      <img width="2880" height="1730" alt="image" src="https://github.com/user-attachments/assets/046901b3-c604-464d-b04b-1fbc9c5f2f84" />
-      <img width="2562" height="970" alt="image" src="https://github.com/user-attachments/assets/07495e91-8648-4f1d-8f41-fe97363e833d" />
+      <img width="2880" height="1738" alt="image" src="https://github.com/user-attachments/assets/5eb5568a-e46d-4e25-8965-cd0370bf176d" />
+      
+      <img width="2570" height="788" alt="image" src="https://github.com/user-attachments/assets/432a7e02-87fb-4392-ba93-6945fb18c879" />
 
 ## Useful inspection commands
 
