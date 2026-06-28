@@ -109,17 +109,14 @@ Parts 1 and 2 used a **named volume** (`mongodata`), which Docker creates and ma
     - `-v C:/mongodb:/data` — bind mount: because the left side (`C:/mongodb`) is a host path rather than a volume name, Docker mounts that exact host folder at `/data` in the container, instead of mounting a Docker-managed volume.
     - `nginx` — the image to run.
 
-    ### Screenshot
-
-    <img width="2880" height="1738" alt="image" src="https://github.com/user-attachments/assets/f6a2a98f-f27a-4477-a444-d76d84236040" />
-
-
-
+   
 14. List the container to confirm it's running:
 
     ```sh
     docker ps
     ```
+    ### Screenshot
+    <img width="2182" height="856" alt="image" src="https://github.com/user-attachments/assets/f01510c2-3e65-4f64-9c9c-1347022bf2b5" />
 
 15. On the host, add a file to the bind-mounted folder — for example, create `C:\mongodb\Atul.txt`.
 
@@ -138,11 +135,12 @@ Parts 1 and 2 used a **named volume** (`mongodata`), which Docker creates and ma
     The file created on the host (`Atul.txt`) shows up inside the container at `/data` immediately — no rebuild or restart needed.
 
     ### Screenshot
+    <img width="2880" height="1738" alt="image" src="https://github.com/user-attachments/assets/f6a2a98f-f27a-4477-a444-d76d84236040" />
     <img width="2880" height="1744" alt="image" src="https://github.com/user-attachments/assets/c4b08ee1-2b1a-440a-aa0e-7023b0be10d8" />
 
     
 
-17. The reverse is also true: any file the container writes into `/data` appears in `C:\mongodb` on the host. This live, two-way sync is what makes bind mounts useful for things like serving static files or live-editing code from the host while a container runs — unlike a named volume, where the data only lives inside Docker's managed storage and isn't directly browsable on the host filesystem.
+18. The reverse is also true: any file the container writes into `/data` appears in `C:\mongodb` on the host. This live, two-way sync is what makes bind mounts useful for things like serving static files or live-editing code from the host while a container runs — unlike a named volume, where the data only lives inside Docker's managed storage and isn't directly browsable on the host filesystem.
 
      ### Screenshot
       <img width="2880" height="1738" alt="image" src="https://github.com/user-attachments/assets/5eb5568a-e46d-4e25-8965-cd0370bf176d" />
